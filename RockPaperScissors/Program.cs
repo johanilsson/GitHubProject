@@ -26,4 +26,5 @@ else
     {
     beginersIs = player2;
     }
-
+Console.WriteLine(begin);
+Console.WriteLine(beginersIs + " <- Begins!");
