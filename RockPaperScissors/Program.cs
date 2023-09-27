@@ -45,8 +45,7 @@ for (int i = 0; i < choice.Length; i++)
     
 }
 
-
 Console.WriteLine("------------------");
-Console.WriteLine(beginersIs + "Make a choice! ");
+Console.WriteLine(beginersIs + "make a choice! ");
 string firstGame = Console.ReadLine();
 
