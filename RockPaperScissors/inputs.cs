@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    public class input
+    public enum input
     {
+
+
     }
 }

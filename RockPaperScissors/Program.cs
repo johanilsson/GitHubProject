@@ -1,7 +1,13 @@
-﻿Random rnd = new Random();
+﻿using RockPaperScissors;
+
+Random rnd = new Random();
 int begin = (rnd.Next(0, 10));
 string beginersIs;
 string[] choice = { "Rock", "Papper", "Sissor" };
+int game;
+int index;
+
+
 
 Console.Write("Player 1 name: ");
 string player1 = Console.ReadLine();
@@ -37,15 +43,23 @@ Thread.Sleep(1000);
 
 Console.WriteLine("------------------");
 
-//choice
+makeChoice();
 
-for (int i = 0; i < choice.Length; i++)
+
+
+
+void makeChoice()
 {
-    Console.WriteLine(choice[i]);
+   
+    for (int i = 0; i < choice.Length; i++)
+    {
+        Console.WriteLine("[ " + i +  " ]" + choice[i]);
+
+    }
+        Console.WriteLine("------------------");
+    Console.Write(beginersIs + " make a choice: ");
+    game = Convert.ToInt32(Console.ReadLine());
     
 }
 
-Console.WriteLine("------------------");
-Console.WriteLine(beginersIs + "make a choice! ");
-string firstGame = Console.ReadLine();
 
