@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RockPaperScissors
+namespace playground
 {
-    public class Players
+    public class Player
     {
-        string player;
-        string 
     }
 }
