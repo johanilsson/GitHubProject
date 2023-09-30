@@ -1,65 +1,58 @@
 ﻿using RockPaperScissors;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Channels;
 
-Random rnd = new Random();
-int begin = (rnd.Next(0, 10));
-string beginersIs;
-string[] choice = { "Rock", "Papper", "Sissor" };
-int game;
-int index;
+int playerCount = 2;
 
+List<Player> players = new List<Player>();
 
-
-Console.Write("Player 1 name: ");
-string player1 = Console.ReadLine();
-Console.WriteLine("-------------------------");
-Console.Write("Player 2 name: ");
-string player2 = Console.ReadLine();
-
-Console.Clear();
-
-Console.WriteLine("Welcome " + player1 + " & " + player2);
-Console.WriteLine("Lets play a game of Rock Papper Sissors");
-
-Thread.Sleep(3000);
-
-Console.Clear();
-
-// Random 
-
-if(begin % 2 ==0)
-    {
-    beginersIs = player1;
-    }
-else
-    {
-    beginersIs = player2;
-    }
-
-// begining
-
-Console.WriteLine(beginersIs + " <- Begins!");
-
-Thread.Sleep(1000);
-
-Console.WriteLine("------------------");
-
-makeChoice();
-
-
-
-
-void makeChoice()
+for(int i =1; i < playerCount; i ++)
 {
-   
-    for (int i = 0; i < choice.Length; i++)
+    string name = string.Empty;
+    while(name.Length == 0)
     {
-        Console.WriteLine("[ " + i +  " ]" + choice[i]);
-
+        Console.Clear();
+        Console.WriteLine("Please enter the name of player" + i + ": ");
+        name = Console.ReadLine() ?? string.Empty;
     }
-        Console.WriteLine("------------------");
-    Console.Write(beginersIs + " make a choice: ");
-    game = Convert.ToInt32(Console.ReadLine());
-    
+
+    players.Add(new Player(name));
 }
 
 
+for(int round = 1; round <= 3; i++)
+{
+   foreach(Player plater in players)
+    {
+        DisplayGameState(round);
+
+        Console.ReadKey();
+    }
+
+
+
+    Console.ReadKey();
+}
+
+void DisplayGameState(int round)
+{
+    foreach (Player player in players)
+    {
+        Console.WriteLine(player.Name + " ");
+        Console.Clear();
+        Console.WriteLine("Round " + round);
+        Console.WriteLine("Players in game: ");
+
+
+    }
+}
+
+outcome CalculateOutcome(Player p1, Player p2)
+{
+    if (p1.choice.Equals(Option.Rock) && p2.Choice.Equals(Option.scissors);
+
+    {
+        return outcome.win;
+
+    }
+}

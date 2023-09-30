@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RockPaperScissors
+namespace playground
 {
-    public enum input
+    public enum Option
     {
-
-
+        Rock,
+        Papper,
+        Scissor,
     }
 }

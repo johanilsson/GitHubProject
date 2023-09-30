@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace playground
 {
-    public class input
+    internal enum Outcome
     {
-
-
+        Win,
+        Lose,
+        Draw,
     }
 }
